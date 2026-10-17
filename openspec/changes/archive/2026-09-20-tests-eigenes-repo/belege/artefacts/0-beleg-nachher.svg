@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="510" viewBox="0 0 860 510">
+  <rect width="860" height="510" rx="8" fill="#111827"/>
+  <text x="26" y="34" fill="#f9fafb" font-family="ui-sans-serif, Helvetica, sans-serif" font-size="16" font-weight="600">tests-eigenes-repo — nachher: der Testlauf steht ohne Arbeitsraum</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">
+  <text x="26" y="66" fill="#7dd3fc">$ node --test --test-reporter=spec tests/*.test.mjs</text>
+  <text x="26" y="85" fill="#9ca3af"> </text>
+  <text x="26" y="104" fill="#e5e7eb">▶ Das Lagebild beobachtet ein fremdes Repo</text>
+  <text x="26" y="123" fill="#86efac">  ✔ nennt das beobachtete Repo als Wurzel und fuehrt dessen Hauptbaum</text>
+  <text x="26" y="142" fill="#86efac">  ✔ fuehrt den Arbeitsbaum des beobachteten Repos mit Branch und Kopfstand</text>
+  <text x="26" y="161" fill="#86efac">  ✔ ordnet einen nur im Arbeitsbaum liegenden Change diesem Baum zu</text>
+  <text x="26" y="180" fill="#86efac">  ✔ laesst das aufrufende Repo vollstaendig draussen</text>
+  <text x="26" y="199" fill="#e5e7eb">▶ Jeder Worktree traegt Stand und Zeitpunkt</text>
+  <text x="26" y="218" fill="#86efac">  ✔ findet den Arbeitsbaum des beobachteten Repos</text>
+  <text x="26" y="237" fill="#86efac">  ✔ nennt Pfad, Name, Branch und Kopfstand mit Betreff</text>
+  <text x="26" y="256" fill="#86efac">  ✔ nennt den Arbeitsstand als drei Zaehler</text>
+  <text x="26" y="275" fill="#86efac">  ✔ weist den Hauptbaum als solchen aus und laesst ihn sauber</text>
+  <text x="26" y="294" fill="#e5e7eb">▶ Die Aufgaben eines Changes stehen zum Aufklappen bereit</text>
+  <text x="26" y="313" fill="#86efac">  ✔ haelt die Reihenfolge der tasks.md</text>
+  <text x="26" y="332" fill="#9ca3af"> </text>
+  <text x="26" y="351" fill="#fbbf24">  tests 110</text>
+  <text x="26" y="370" fill="#fbbf24">  suites 28</text>
+  <text x="26" y="389" fill="#fbbf24">  pass 110</text>
+  <text x="26" y="408" fill="#fbbf24">  fail 0</text>
+  <text x="26" y="427" fill="#9ca3af"> </text>
+  <text x="26" y="446" fill="#9ca3af">kein Arbeitsraum des ops-lab wird vorausgesetzt — das Wegwerf-Repo</text>
+  <text x="26" y="465" fill="#9ca3af">baut der Test selbst und raeumt es danach ab.</text>
+  </g>
+</svg>

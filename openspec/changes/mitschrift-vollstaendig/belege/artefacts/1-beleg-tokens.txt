@@ -1,0 +1,12 @@
+
+Token je Lauf — /Users/alice/GITHUB/ops-lab
+
+  Sitzung   Beginn             Spanne   aktiv  Nachr.      aus   Cache   gesamt  Arbeitsraum
+  23a59fb8  2026-09-20 16:11    16min   16min     123     117k   11.7M    11.8M  (haupt)
+  cf52354c  2026-09-20 09:10     7.3h    2.8h     903     836k   95.6M    96.5M  (haupt)
+  9a0d7471  2026-09-20 08:13     8.0h    3.4h     911     1.1M   97.3M    98.4M  (haupt)
+
+  3 Laeufe, 206.655.011 Token, Median 96.5M je Lauf
+  Median der aktiven Zeit 2.8h, zusammen 6.5h
+  16 Sitzungen unter 5 Nachrichten ausgeblendet (--alle zeigt sie)
+

@@ -1,0 +1,59 @@
+schema: spec-driven
+
+context: |
+  ops-lab — Labor fuer den spec-getriebenen Ablauf. Das Werkstueck ist der Ablauf
+  selbst; die Fachlichkeit ist nur das Material, an dem er sich beweisen muss.
+
+  Fachlichkeit: ein Wirtschaftlichkeitsrechner. Er ermittelt aus Aufwandsschaetzung
+  und Einsparung je Vorgang das Einsparpotenzial, stellt ihm das Finanzvolumen der
+  Umsetzung gegenueber und weist Nettonutzen und Amortisationsdauer aus. Die
+  Fachbegriffe Einsparpotenzial, Finanzvolumen, Nettonutzen, Amortisationsdauer und
+  Umsetzungsgrad bleiben unveraendert; sie werden nicht uebersetzt und nicht ersetzt.
+
+  Die Rechenbasis steht offen: 220 Arbeitstage bzw. 46 Arbeitswochen im Jahr sind
+  benannte Konstanten in src/rechenbasis.mjs, kein magischer Faktor im Rechenweg.
+  Ein fehlender Stundensatz ist ein zu meldender Zustand, kein stiller Nullwert.
+
+  Technik: Node ab 22, node --test, keine Abhaengigkeit, kein Build, kein
+  Paketmanager. Ein Rechenschritt ist ein Modul unter src/ mit genau einer Testdatei
+  unter tests/. Dieser Schnitt ist Absicht: er macht zwei Changes disjunkt und damit
+  parallel lauffaehig.
+
+  Ablauf: GitHub-Issue (Idee) -> /grill-me bei offenen Fragen -> just neu (Branch
+  change/<id> + vier Artefakte) -> Gate 1 (Plan) -> Gate 2 (roter Test) -> Abschluss
+  (gruener Test) -> PR gegen main -> openspec archive. Die Gates sind Befehle mit
+  Exit-Code; sie fragen niemanden und lassen sich nicht ueberspringen.
+
+rules:
+  proposal:
+    - Der Abschnitt Warum umfasst fuenf bis zehn Saetze und nennt keine Loesung.
+    - Der Abschnitt Beruehrte Dateien listet jede Datei, die der Change anfasst.
+      Diese Liste ist die Zusage fuer den Parallelbetrieb und wird eingehalten.
+    - Geht der Change auf ein GitHub-Issue zurueck, wird es im Abschnitt Warum
+      als #<nummer> genannt.
+    - Der Abschnitt Was ausdruecklich nicht haelt den Change klein.
+  spec:
+    - Jedes Requirement hat mindestens ein Scenario in Given/When/Then.
+    - Ein Requirement beschreibt beobachtbares Verhalten, keine Implementierung.
+    - Diese Fachbegriffe bleiben unveraendert -- Einsparpotenzial, Finanzvolumen,
+      Nettonutzen, Amortisationsdauer, Umsetzungsgrad.
+    - Jedes Requirement nutzt SHALL, nicht SOLL. OpenSpec prueft auf RFC-2119.
+  tasks:
+    - Jede Testdatei steht als Pfad in Backticks, zum Beispiel `tests/nutzen.test.mjs`.
+      Gate 1 und Gate 2 lesen genau diese Pfade.
+    - Die erste Aufgabe schreibt den Test, nicht die Umsetzung.
+    - Hoechstens acht Aufgaben. Mehr heisst, der Change ist zu gross geschnitten.
+  design:
+    - Nur anlegen, wenn eine Entscheidung zwischen echten Alternativen ansteht.
+    - Jede Alternative mit Tradeoff und Begruendung der Wahl.
+
+operations:
+  apply:
+    guidance:
+      - Nach jeder abgeschlossenen Aufgabe die Checkbox in tasks.md setzen.
+      - Keine Datei anfassen, die nicht unter Beruehrte Dateien steht.
+  archive:
+    guidance:
+      - Erst nach dem Merge des PR archivieren.
+      - gate1.md, gate2.md und fertig.md wandern mit ins Archiv; sie sind der
+        Nachweis, dass der Ablauf gehalten hat.

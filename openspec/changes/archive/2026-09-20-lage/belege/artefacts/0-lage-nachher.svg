@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470">
+  <rect width="880" height="470" fill="#1d1f21"/>
+  <g font-family="Menlo, monospace" font-size="14">
+    <text x="24" y="38" fill="#7f8c8d">ops-lab — Nachweis nachher — Change `lage`</text>
+
+    <text x="24" y="78" fill="#5fb3b3">$ just lage-kurz</text>
+    <text x="24" y="100" fill="#e8e6e3">Lage: 2 aktiv · 1 frei · 0 blockiert · 1 verwaist · 0 Ideen · zuletzt worktrees</text>
+
+    <text x="24" y="142" fill="#5fb3b3">$ just lage</text>
+    <text x="24" y="164" fill="#e8e6e3">{</text>
+    <text x="24" y="184" fill="#e8e6e3">  "aktiv": [</text>
+    <text x="24" y="204" fill="#e8e6e3">    { "kennung": "lage",      "branch": "change/lage",      "offen": 0, "gesamt": 6 },</text>
+    <text x="24" y="224" fill="#e8e6e3">    { "kennung": "leitstand", "branch": "change/leitstand", "offen": 7, "gesamt": 7 }</text>
+    <text x="24" y="244" fill="#e8e6e3">  ],</text>
+    <text x="24" y="264" fill="#e8e6e3">  "frei": [ "leitstand" ],</text>
+    <text x="24" y="284" fill="#e8e6e3">  "blockiert": [],</text>
+    <text x="24" y="304" fill="#f0c674">  "verwaist": [ { "raum": "mitschrift-vollstaendig", ...} ],</text>
+    <text x="24" y="324" fill="#e8e6e3">  "ideen": [],  "stumm": [],</text>
+    <text x="24" y="344" fill="#e8e6e3">  "zuletzt": [ { "datum": "2026-09-20", "kennung": "worktrees" }, ... ]</text>
+    <text x="24" y="364" fill="#e8e6e3">}</text>
+
+    <text x="24" y="406" fill="#5fb3b3">$ node --test tests/lage.test.mjs</text>
+    <text x="24" y="428" fill="#8ec07c">tests 12 · pass 12 · fail 0</text>
+    <text x="24" y="452" fill="#7f8c8d">Der verwaiste Arbeitsraum wird ausgewiesen, nicht entfernt.</text>
+  </g>
+</svg>

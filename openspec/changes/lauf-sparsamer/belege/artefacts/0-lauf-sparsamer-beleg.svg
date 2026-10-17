@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="470" viewBox="0 0 820 470" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .flaeche { fill: #ffffff; }
+    .titel { font-size: 19px; font-weight: 600; fill: #16202b; }
+    .unter { font-size: 12.5px; fill: #5b6b7c; }
+    .achse { stroke: #16202b; stroke-width: 1.4; }
+    .gitter { stroke: #dfe6ec; stroke-width: 1; }
+    .tick { font-size: 11px; fill: #5b6b7c; }
+    .kurve { fill: none; stroke: #1f6feb; stroke-width: 2.4; }
+    .marke { fill: #1f6feb; }
+    .markentext { font-size: 12px; fill: #16202b; }
+    .kopf { font-size: 13px; font-weight: 600; fill: #16202b; }
+    .zelle { font-size: 12.5px; fill: #16202b; }
+    .wert { font-size: 12.5px; font-weight: 600; fill: #1f6feb; }
+    .fuss { font-size: 11px; fill: #8a97a3; }
+  </style>
+
+  <rect width="820" height="470" class="flaeche"/>
+
+  <text x="40" y="36" class="titel">Befehle je Lauf — weniger Aufrufe nach der Rahmen-Ergaenzung</text>
+  <text x="40" y="54" class="unter">Lauf 3 vorher (46), Lauf 4 nachher (43); Token fielen von 5,43 auf 3,94 Mio.</text>
+
+  <line x1="80" y1="330.0" x2="470" y2="330.0" class="gitter"/>
+  <text x="70" y="334.0" class="tick" text-anchor="end">43</text>
+  <line x1="80" y1="243.3" x2="470" y2="243.3" class="gitter"/>
+  <text x="70" y="247.3" class="tick" text-anchor="end">44</text>
+  <line x1="80" y1="156.7" x2="470" y2="156.7" class="gitter"/>
+  <text x="70" y="160.7" class="tick" text-anchor="end">45</text>
+  <line x1="80" y1="70.0" x2="470" y2="70.0" class="gitter"/>
+  <text x="70" y="74.0" class="tick" text-anchor="end">46</text>
+  <line x1="80.0" y1="70" x2="80.0" y2="330" class="gitter"/>
+  <text x="80.0" y="352" class="tick" text-anchor="middle">2</text>
+  <line x1="177.5" y1="70" x2="177.5" y2="330" class="gitter"/>
+  <text x="177.5" y="352" class="tick" text-anchor="middle">2.5</text>
+  <line x1="275.0" y1="70" x2="275.0" y2="330" class="gitter"/>
+  <text x="275.0" y="352" class="tick" text-anchor="middle">3</text>
+  <line x1="372.5" y1="70" x2="372.5" y2="330" class="gitter"/>
+  <text x="372.5" y="352" class="tick" text-anchor="middle">3.5</text>
+  <line x1="470.0" y1="70" x2="470.0" y2="330" class="gitter"/>
+  <text x="470.0" y="352" class="tick" text-anchor="middle">4</text>
+
+  <line x1="80" y1="70" x2="80" y2="330" class="achse"/>
+  <line x1="80" y1="330" x2="470" y2="330" class="achse"/>
+  <text x="470" y="370" class="tick" text-anchor="end">Lauf</text>
+  <text x="70" y="56" class="tick" text-anchor="end">Befehle</text>
+
+  <polyline points="80.0,243.3 275.0,70.0 470.0,330.0" class="kurve"/>
+
+  <circle cx="80.0" cy="243.3" r="4.5" class="marke"/><text x="89.0" y="235.3" class="markentext">2 → 44</text>
+  <circle cx="275.0" cy="70.0" r="4.5" class="marke"/><text x="284.0" y="62.0" class="markentext">3 → 46</text>
+  <circle cx="470.0" cy="330.0" r="4.5" class="marke"/><text x="479.0" y="322.0" class="markentext">4 → 43</text>
+
+  <text x="500" y="74" class="kopf">Einzelne Faelle, frisch gerechnet</text>
+  <text x="500" y="104" class="zelle">befehle(2)</text><text x="790" y="104" class="wert" text-anchor="end">44</text>
+  <text x="500" y="130" class="zelle">befehle(3)</text><text x="790" y="130" class="wert" text-anchor="end">46</text>
+  <text x="500" y="156" class="zelle">befehle(4)</text><text x="790" y="156" class="wert" text-anchor="end">43</text>
+
+  <text x="40" y="434" class="unter">Jede Zahl im Bild stammt aus tests/lauf-sparsamer-daten.mjs#befehle -- ein zweiter Rechenweg steht nirgends.</text>
+  <text x="40" y="452" class="fuss">Erzeugt am 2026-09-20T18:25:15.841Z von tools/belegbild.mjs</text>
+</svg>

@@ -1,0 +1,74 @@
+// Was der Pruefstand in tests/lagebild-web.test.mjs herstellt -- und was daraus folgt.
+//
+// Gruen: hergestellt, also zugesichert. Rot: angefallen, also Zufall. Der Unterschied
+// ist der ganze Punkt. Am laufenden Repo lag zum Zeitpunkt der Messung genau eine Datei
+// einer einzigen Art vor; die Pruefung zaehlt vier auf.
+//
+// Anzeigen:  dot -Tpng docs/pruefstand.dot -o pruefstand.png
+
+digraph pruefstand {
+  rankdir=LR;
+  fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fillcolor="#f5f5f5", fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9, color="#555555"];
+
+  subgraph cluster_probe {
+    label="probeRepo()  —  hergestellt unter mkdtemp";
+    style=filled; fillcolor="#fbfbfb"; color="#bbbbbb"; fontsize=11;
+
+    subgraph cluster_haupt {
+      label="Hauptbaum  probe-repo";
+      style=filled; fillcolor="#eef4fb"; color="#9db8d6";
+
+      h_commit [label="Commit\n„Probe: Hauptbaum\"", fillcolor="#dce8f6"];
+      h_change [label="probe-haupt\n1 von 2 Aufgaben\ngate1.md belegt"];
+      h_altlast [label="altlast.md\ncommittet", shape=note, fillcolor="#ffffff"];
+    }
+
+    subgraph cluster_zweig {
+      label="Arbeitsbaum  .claude/worktrees/probe-zweig";
+      style=filled; fillcolor="#eef7ee"; color="#9dc99d";
+
+      z_commit1 [label="Commit\n„Probe: Arbeitsbaum\"", fillcolor="#d9edd9"];
+      z_commit2 [label="Commit\n„Probe: 1.2 Modul\nanlegen erledigt\"", fillcolor="#c8e6c8"];
+      z_change [label="probe-zweig\n2 von 3 Aufgaben\nnaechste: Aufräumen"];
+      z_arten [label="merkzettel.md  vorgemerkt\nREADME.md  geaendert\nnotiz.txt  unverfolgt\naltlast.md  geloescht", shape=note, fillcolor="#fffbe6"];
+    }
+  }
+
+  subgraph cluster_nutzlast {
+    label="ops.py --root PFAD --web --trocken";
+    style=filled; fillcolor="#fbfbfb"; color="#bbbbbb"; fontsize=11;
+
+    n_zeit [label="zeitleiste\n1 Eintrag\nchange = probe-zweig", fillcolor="#c8e6c8"];
+    n_arten [label="dateien[].art\nalle vier belegt", fillcolor="#fffbe6"];
+    n_zaehler [label="vorgemerkt 1\ngeaendert 2\nunverfolgt 1", fillcolor="#d9edd9"];
+    n_haupt [label="haupt = true\nsauber", fillcolor="#dce8f6"];
+  }
+
+  h_commit -> h_change [style=dotted, arrowhead=none];
+  h_commit -> h_altlast [style=dotted, arrowhead=none];
+  h_commit -> z_commit1 [label="git worktree add\n-b change/probe-zweig"];
+  z_commit1 -> z_commit2 [label="1.2 abgehakt"];
+  z_commit2 -> z_change [style=dotted, arrowhead=none];
+  z_commit2 -> z_arten [style=dotted, arrowhead=none];
+  h_altlast -> z_arten [label="im Zweig entfernt", style=dashed];
+
+  z_commit2 -> n_zeit [label="Fertigstellung"];
+  z_arten -> n_arten;
+  z_arten -> n_zaehler [label="geloescht zaehlt\nbei geaendert mit"];
+  h_commit -> n_haupt;
+
+  // Was vorher dastand: derselbe Abschnitt, aber am laufenden Repo.
+  subgraph cluster_vorher {
+    label="vorher  —  dieselbe Pruefung am laufenden Repo";
+    style=filled; fillcolor="#fdf4f4"; color="#e0aaaa"; fontsize=11;
+
+    v_repo [label="laufendes Repo\nArbeitsstand beliebig", fillcolor="#fdeaea", color="#cc4444", fontcolor="#aa2222"];
+    v_arten [label="dateien[].art\n{ unverfolgt: 1 }\ndrei Arten ungeprueft", fillcolor="#fdeaea", color="#cc4444", fontcolor="#aa2222"];
+    v_sauber [label="bei sauberem Baum:\nvier Pruefungen ohne\nGegenstand — und gruen", fillcolor="#fdeaea", color="#cc4444", fontcolor="#aa2222"];
+
+    v_repo -> v_arten [color="#cc4444"];
+    v_arten -> v_sauber [color="#cc4444", label="niemand merkt es", fontcolor="#aa2222"];
+  }
+}

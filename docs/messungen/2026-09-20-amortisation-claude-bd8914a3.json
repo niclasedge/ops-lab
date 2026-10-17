@@ -1,0 +1,63 @@
+{
+  "kennung": "amortisation",
+  "adapter": "claude",
+  "zeitpunkt": "2026-09-20T17:32:52.662Z",
+  "sitzung": "bd8914a3-cb47-4b95-921c-e70dd23e9f6f",
+  "ziel": {
+    "repo": "/Users/alice/GITHUB/ops-lab-test",
+    "basis": "main",
+    "stand": "e3441c6d6de89afb35c41dced8150146830314d2"
+  },
+  "werkzeugstand": "ad52b68f5345db3ea5fdc6835759dd41fd8b376d",
+  "token": {
+    "ein": 146,
+    "aus": 76331,
+    "cacheLesen": 4709176,
+    "cacheSchreiben": 233463
+  },
+  "gesamt": 5019116,
+  "nachrichten": 73,
+  "dauer": {
+    "spanne": 390.337,
+    "aktiv": 390.3369999999998
+  },
+  "startkontext": 33326,
+  "befehle": 44,
+  "schalenbefehle": 19,
+  "kosten": {
+    "euro": 15.7948,
+    "vollstaendig": true,
+    "unbekannt": []
+  },
+  "erfuellung": {
+    "erfuellt": [
+      "aufgaben",
+      "dateien",
+      "tests"
+    ],
+    "offen": [
+      {
+        "id": "gates",
+        "meldung": "fehlt: gate1, gate2, fertig"
+      },
+      {
+        "id": "beleg",
+        "meldung": "kein Beleg der Stufe nachher eingeliefert"
+      },
+      {
+        "id": "pr",
+        "meldung": ""
+      },
+      {
+        "id": "merge",
+        "meldung": ""
+      }
+    ],
+    "stand": "3/7"
+  },
+  "erfuellt": [
+    "aufgaben",
+    "dateien",
+    "tests"
+  ]
+}

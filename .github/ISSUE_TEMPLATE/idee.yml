@@ -1,0 +1,50 @@
+name: Idee
+description: Ein künftiges Epic. Wird später zu einem OpenSpec-Change.
+title: "[Idee] "
+labels: ["idee"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ein Issue ist noch kein Change. Es hält den Bedarf fest, bis jemand
+        `just neu <id> <capability> <issue-nr>` aufruft. Je besser die vier
+        Felder gefüllt sind, desto kürzer fällt `/grill-me` aus.
+
+  - type: textarea
+    id: bedarf
+    attributes:
+      label: Wer braucht das, und was tut diese Person heute stattdessen?
+      placeholder: Keine Lösung — nur der Bedarf und der heutige Umweg.
+    validations:
+      required: true
+
+  - type: textarea
+    id: szenario
+    attributes:
+      label: Woran erkennen wir, dass es funktioniert?
+      description: Als Szenario, nicht als Gefühl. Gegeben / Wenn / Dann.
+      placeholder: |
+        Gegeben eine Maßnahme mit 2 Stunden Aufwand je Vorgang und 500 Vorgängen im Jahr
+        Wenn das Einsparpotenzial berechnet wird
+        Dann weist es den Betrag in Euro und die eingesparten Personentage aus
+    validations:
+      required: true
+
+  - type: textarea
+    id: dateien
+    attributes:
+      label: Welche Dateien fasst das an?
+      description: Entscheidet darüber, ob der Change parallel zu anderen laufen kann.
+      placeholder: |
+        src/einsparpotenzial.mjs (neu)
+        tests/einsparpotenzial.test.mjs (neu)
+    validations:
+      required: true
+
+  - type: textarea
+    id: abgrenzung
+    attributes:
+      label: Was gehört ausdrücklich nicht dazu?
+      placeholder: Hält den späteren Change klein und den Dateiumfang disjunkt.
+    validations:
+      required: false

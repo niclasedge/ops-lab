@@ -1,0 +1,27 @@
+{
+  "_hinweis": "Preise je einer Million Token, in Euro. Von Hand gepflegt: eine Messung ist ein Beleg ueber einen Zeitpunkt und haelt den Preis fest, der zu ihr gehoerte. Wuerde zur Laufzeit abgefragt, aenderte sich die Kostenangabe einer Messung von gestern, sobald sich ein Preis aendert -- zwei Messungen waeren unvergleichbar, ohne dass sich am Lauf etwas geaendert haette. Jeder Eintrag traegt sein Stand-Datum. Ein Modell ohne Eintrag fuehrt zu 'unbekannt', nicht zu null.",
+  "_pruefen": "Die Werte unten sind umgerechnete Listenpreise und vor der ersten belastbaren Messreihe gegen die aktuelle Preisliste zu pruefen.",
+  "modelle": {
+    "claude-opus-5": {
+      "ein": 13.8,
+      "aus": 69.0,
+      "cacheLesen": 1.38,
+      "cacheSchreiben": 17.25,
+      "stand": "2026-09-20"
+    },
+    "claude-sonnet-5": {
+      "ein": 2.76,
+      "aus": 13.8,
+      "cacheLesen": 0.276,
+      "cacheSchreiben": 3.45,
+      "stand": "2026-09-20"
+    },
+    "claude-haiku-4-5-20251001": {
+      "ein": 0.92,
+      "aus": 4.6,
+      "cacheLesen": 0.092,
+      "cacheSchreiben": 1.15,
+      "stand": "2026-09-20"
+    }
+  }
+}

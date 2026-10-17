@@ -1,0 +1,68 @@
+// Der Weg eines Messlaufs: was von Hand geschieht, was das Werkzeug tut,
+// und an welcher Stelle ein Lauf verworfen wird.
+//
+//   dot -Tsvg docs/messrahmen.dot -o messrahmen.svg
+//
+// Die beiden roten Kanten sind der Punkt des ganzen Aufbaus: ein Lauf, der
+// nicht vergleichbar ist, faellt hier heraus und nicht erst in der Auswertung.
+
+digraph messrahmen {
+  rankdir=TB;
+  fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, fillcolor="#f4f4f4", color="#999999"];
+  edge [fontname="Helvetica", fontsize=9, color="#666666"];
+
+  subgraph cluster_vorbereiten {
+    label="Vorbereiten — just messlauf";
+    style="rounded"; color="#cccccc"; fontsize=10;
+
+    sauber   [label="Zielrepo sauber?"; shape=diamond; fillcolor="#ffffff"];
+    zurueck  [label="auf Basis-Commit\nzuruecksetzen"];
+    auftrag  [label="Messstueck aus\nauftrag-<kennung>.md\n+ Pruefwert"];
+  }
+
+  subgraph cluster_lauf {
+    label="Lauf — von Hand, im Zielrepo";
+    style="rounded"; color="#cccccc"; fontsize=10;
+
+    start    [label="just test-claude\noder just test-pi"; fillcolor="#e8eef7"];
+    agent    [label="Agent arbeitet den Ablauf ab:\nneu · gate1 · rot · gate2 ·\numsetzen · fertig · pr · merge"; fillcolor="#e8eef7"];
+    schrift  [label="Mitschrift faellt im\nZielrepo an"; fillcolor="#e8eef7"];
+  }
+
+  subgraph cluster_auswerten {
+    label="Auswerten — just messung";
+    style="rounded"; color="#cccccc"; fontsize=10;
+
+    aufwand  [label="Token je Art und Modell,\nStartkontext, Befehle"];
+    grad     [label="Erfuellungsgrad:\nsieben Kriterien einzeln"];
+    euro     [label="Kosten gegen preise.json\n(Stand je Eintrag)"];
+    ablage   [label="docs/messungen/*.json"; fillcolor="#eef7ee"];
+  }
+
+  subgraph cluster_vergleich {
+    label="Vergleichen — just vergleich";
+    style="rounded"; color="#cccccc"; fontsize=10;
+
+    kontext  [label="Startkontext beider Laeufe\nweniger als 10 % auseinander?"; shape=diamond; fillcolor="#ffffff"];
+    urteil   [label="weniger Aufwand bei\ngleichem Erfuellungsgrad\n= Verbesserung"; fillcolor="#eef7ee"];
+  }
+
+  verworfen [label="Lauf verworfen"; shape=box; style="rounded,filled"; fillcolor="#f7eeee"; color="#cc7777"];
+
+  sauber   -> zurueck  [label="ja"];
+  sauber   -> verworfen [label="nein — der Stand\nwuerde mitgemessen"; color="#cc7777"; fontcolor="#cc7777"];
+  zurueck  -> auftrag;
+  auftrag  -> start;
+  start    -> agent;
+  agent    -> schrift;
+  schrift  -> aufwand;
+  schrift  -> grad;
+  aufwand  -> euro;
+  aufwand  -> ablage;
+  grad     -> ablage;
+  euro     -> ablage;
+  ablage   -> kontext;
+  kontext  -> urteil   [label="ja"];
+  kontext  -> verworfen [label="nein — verglichen wuerden\nzwei Umgebungen"; color="#cc7777"; fontcolor="#cc7777"];
+}

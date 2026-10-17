@@ -1,0 +1,61 @@
+// Was die Messung nach diesem Change liest.
+//
+// Vorher fand sie genau einen Ordner: den des Hauptordners, und den auch nur,
+// wenn die Sitzung dort gefuehrt wurde. Die gestrichelten Kanten waren nicht
+// vorhanden -- acht Mitschriftenordner zu Arbeitsraeumen dieses Repos wurden nie
+// gelesen, und die Dauer stand nirgends, obwohl die Spec sie verlangt.
+
+digraph mitschrift_vollstaendig {
+  rankdir=LR;
+  bgcolor="white";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+
+  subgraph cluster_repo {
+    label="Repo (--repo, Vorgabe: dieses)";
+    style=dashed; color="#888888"; fontname="Helvetica"; fontsize=10;
+    haupt   [label="Hauptordner", fillcolor="#e8f0fe"];
+    raum1   [label=".claude/worktrees/change-a", fillcolor="#fff4e5"];
+    raum2   [label=".claude/worktrees/change-b", fillcolor="#fff4e5"];
+  }
+
+  subgraph cluster_mitschriften {
+    label="projects/ — ein Ordner je Arbeitsverzeichnis";
+    style=dashed; color="#888888"; fontname="Helvetica"; fontsize=10;
+    m0 [label="-…-repo", fillcolor="#e8f0fe"];
+    m1 [label="-…-repo--claude-worktrees-change-a", fillcolor="#fff4e5"];
+    m2 [label="-…-repo--claude-worktrees-change-b", fillcolor="#fff4e5"];
+  }
+
+  haupt -> m0 [label="projektmarke"];
+  raum1 -> m1 [label="neu", style=dashed, color="#c1121f", fontcolor="#c1121f"];
+  raum2 -> m2 [label="neu", style=dashed, color="#c1121f", fontcolor="#c1121f"];
+
+  jsonl [label="*.jsonl\lusage · timestamp\l", shape=note, fillcolor="#f1f3f4"];
+  m0 -> jsonl;
+  m1 -> jsonl [style=dashed, color="#c1121f"];
+  m2 -> jsonl [style=dashed, color="#c1121f"];
+
+  summiere [label="summiere()\lToken je Art und Modell\l", fillcolor="#e6f4ea"];
+  dauerfn  [label="dauer()\lSpanne · aktive Zeit\l", fillcolor="#fde7e9"];
+  istlauf  [label="istLauf()\lab 5 Nachrichten\l", fillcolor="#fde7e9"];
+
+  jsonl -> summiere [label="usage"];
+  jsonl -> dauerfn  [label="timestamp", color="#c1121f", fontcolor="#c1121f"];
+  summiere -> istlauf;
+
+  tokens   [label="just tokens\ljust tokens-test\l", shape=component, fillcolor="#e8f0fe"];
+  messlauf [label="just messung\ldocs/messungen/*.json\l", shape=component, fillcolor="#e8f0fe"];
+
+  summiere -> tokens;
+  dauerfn  -> tokens   [color="#c1121f"];
+  istlauf  -> tokens   [color="#c1121f"];
+  summiere -> messlauf;
+  dauerfn  -> messlauf [color="#c1121f"];
+
+  legende [shape=plaintext, fillcolor="white", style="",
+    label=<<table border="0" cellborder="0" cellspacing="2">
+      <tr><td align="left"><b>rot gestrichelt</b></td><td align="left">neu in diesem Change</td></tr>
+      <tr><td align="left"><b>schwarz</b></td><td align="left">bestand vorher</td></tr>
+    </table>>];
+}

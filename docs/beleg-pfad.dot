@@ -1,0 +1,56 @@
+// Der Weg eines Belegs durch dieses Repo.
+//
+// Rendern:  dot -Tsvg docs/beleg-pfad.dot -o docs/beleg-pfad.svg
+//
+// Die Aussage des Bildes: das Urteil über einen Beleg fällt einmal, beim
+// Einliefern, und wird als Merkmal in die Journalzeile geschrieben. Der
+// Abschluss liest danach nur noch das Journal — er fasst die Platte nicht mehr
+// an. Deshalb überlebt ein Nachweis das Verschieben, Umbenennen und Löschen
+// seiner Quelldatei.
+
+digraph belegpfad {
+  rankdir=TB;
+  bgcolor="white";
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#f4f4f4", color="#999999"];
+  edge [fontname="Helvetica", fontsize=9, color="#666666"];
+
+  quelle    [label="Quelldatei auf der Platte\nScreenshot · docs/*.svg · Ausgabe eines Laufs", fillcolor="#ffffff"];
+  aufruf    [label="just beleg <change> <stufe> <pfad>", shape=box, style="filled", fillcolor="#e8eef7"];
+  werkzeug  [label="tools/beleg.mjs — einliefern()", fillcolor="#e8eef7"];
+
+  urteil    [label="Urteil: vorhanden? reguläre Datei?\nnicht leer? unter 4 MiB?\nMagic Bytes oder .dot/.svg?", shape=diamond, style="filled", fillcolor="#fdf3d8", color="#c8a63c"];
+
+  kopie     [label="Kopie nach belege/assets/ (Bild)\noder belege/artefacts/ (Graph, Ausgabe)", fillcolor="#e3f1e3"];
+  vermerk   [label="keine Kopie\nfehlt = true, Grund im Klartext", fillcolor="#f8e4e4"];
+
+  journal   [label="belege/belege.jsonl\neine Zeile je Beleg, nur angehängt\n{ zeit, stufe, art, pfad, fehlt, grund }", shape=note, fillcolor="#ffffff"];
+
+  lage      [label="belegLage() — tools/pruefungen.mjs\nliest nur das Journal", fillcolor="#e8eef7"];
+  f5        [label="F-5  sichtbarer Beleg der Stufe nachher", shape=diamond, style="filled", fillcolor="#fdf3d8", color="#c8a63c"];
+
+  nachweis  [label="fertig.md geschrieben\nAbschluss bestanden", fillcolor="#e3f1e3"];
+  rot       [label="kein fertig.md\nExit ≠ 0, Grund genannt", fillcolor="#f8e4e4"];
+
+  quelle   -> aufruf;
+  aufruf   -> werkzeug;
+  werkzeug -> urteil;
+
+  urteil   -> kopie   [label="lesbar"];
+  urteil   -> vermerk [label="fehlt oder unlesbar"];
+
+  kopie    -> journal;
+  vermerk  -> journal;
+
+  journal  -> lage    [label="just fertig <change>"];
+  lage     -> f5;
+  f5       -> nachweis [label="Bild oder Graph, nicht fehlend"];
+  f5       -> rot      [label="nichts · unlesbar · nur Ausgabe"];
+
+  // Der Punkt, an dem sich dieser Belegpfad von einem Textnachweis unterscheidet.
+  loeschen [label="Quelldatei gelöscht oder verschoben", shape=plaintext, fillcolor="none", fontcolor="#888888"];
+  loeschen -> journal [style=dashed, color="#bbbbbb", label="ändert nichts:\ndas Urteil steht in der Zeile", fontcolor="#888888"];
+
+  { rank=same; kopie; vermerk; }
+  { rank=same; nachweis; rot; }
+}

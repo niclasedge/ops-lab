@@ -1,0 +1,51 @@
+// Belegbild zum Change vorrat-angleichen.
+//
+// Jede Zahl stammt aus einem echten Lauf am Stand vom 2026-09-24: die
+// Differenzzeilen aus `diff tools/<datei>.mjs ../consumer-repo/tools/<datei>.mjs`
+// vor und nach dem Angleichen, die Testzahlen aus `node --test tests/*.test.mjs`.
+// Erzeugt wird das SVG daneben mit: dot -Tsvg docs/vorrat-angleichen.dot
+digraph vorrat_angleichen {
+  rankdir=LR;
+  fontname="sans-serif";
+  node [shape=box, style="rounded,filled", fontname="sans-serif", fontsize=10];
+  edge [fontname="sans-serif", fontsize=9];
+
+  subgraph cluster_vorher {
+    label="vorher — Quelle hinter dem Abnehmer";
+    color="#bbbbbb";
+    fontsize=10;
+    v1 [label="gate.mjs\n61 Differenzzeilen", fillcolor="#fde7e7"];
+    v2 [label="lage.mjs\n290 Differenzzeilen", fillcolor="#fde7e7"];
+    v3 [label="neu.mjs\n19 Differenzzeilen", fillcolor="#fde7e7"];
+    v4 [label="pruefungen.mjs\n25 Differenzzeilen", fillcolor="#fde7e7"];
+  }
+
+  subgraph cluster_nachher {
+    label="nachher — angeglichen";
+    color="#bbbbbb";
+    fontsize=10;
+    n1 [label="gate.mjs\n0", fillcolor="#e6f4ea"];
+    n2 [label="lage.mjs\n0", fillcolor="#e6f4ea"];
+    n3 [label="neu.mjs\n0", fillcolor="#e6f4ea"];
+    n4 [label="pruefungen.mjs\n0", fillcolor="#e6f4ea"];
+  }
+
+  regeln [label="drei Regeln kommen mit\n· Change nur mit Issue\n· Testbefehl je Projekt\n· Lage fuehrt ohne_issue", shape=note, fillcolor="#f7f7f2"];
+
+  bleibt [label="ops.py bleibt\n3282 Zeilen hier = 3282 dort\n--web-host beidseits", fillcolor="#e8eef7"];
+
+  belege [label="gemessen\n· neu ohne --issue: Exit != 0, kein Ordner\n· gate.projekt.json: Exit 3 durchgereicht\n· ohne Projektdatei: --test greift", fillcolor="#fff4e0"];
+
+  tests [label="node --test tests/*.test.mjs\n381 Tests, 0 Fehler\n(direkt nach dem Kopieren: 10 rot)\nops.py --selftest: bestanden", shape=note, fillcolor="#f7f7f2"];
+
+  v1 -> n1 [label="kopiert"];
+  v2 -> n2;
+  v3 -> n3;
+  v4 -> n4;
+  n1 -> regeln [style=dashed, arrowhead=none];
+  n2 -> regeln [style=dashed, arrowhead=none];
+  n3 -> regeln [style=dashed, arrowhead=none];
+  regeln -> belege;
+  belege -> tests;
+  bleibt -> tests [style=dashed, arrowhead=none];
+}

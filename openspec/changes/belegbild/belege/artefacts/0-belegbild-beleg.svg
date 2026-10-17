@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="470" viewBox="0 0 820 470" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .flaeche { fill: #ffffff; }
+    .titel { font-size: 19px; font-weight: 600; fill: #16202b; }
+    .unter { font-size: 12.5px; fill: #5b6b7c; }
+    .achse { stroke: #16202b; stroke-width: 1.4; }
+    .gitter { stroke: #dfe6ec; stroke-width: 1; }
+    .tick { font-size: 11px; fill: #5b6b7c; }
+    .kurve { fill: none; stroke: #1f6feb; stroke-width: 2.4; }
+    .marke { fill: #1f6feb; }
+    .markentext { font-size: 12px; fill: #16202b; }
+    .kopf { font-size: 13px; font-weight: 600; fill: #16202b; }
+    .zelle { font-size: 12.5px; fill: #16202b; }
+    .wert { font-size: 12.5px; font-weight: 600; fill: #1f6feb; }
+    .fuss { font-size: 11px; fill: #8a97a3; }
+  </style>
+
+  <rect width="820" height="470" class="flaeche"/>
+
+  <text x="40" y="36" class="titel">Belegbild: Amortisationsdauer aus der Beispielfunktion</text>
+  <text x="40" y="54" class="unter">Jede Zahl im Bild ist ein echter Aufruf von amortisationsdauer(10000, x).</text>
+
+  <line x1="80" y1="330.0" x2="470" y2="330.0" class="gitter"/>
+  <text x="70" y="334.0" class="tick" text-anchor="end">2</text>
+  <line x1="80" y1="265.0" x2="470" y2="265.0" class="gitter"/>
+  <text x="70" y="269.0" class="tick" text-anchor="end">4</text>
+  <line x1="80" y1="200.0" x2="470" y2="200.0" class="gitter"/>
+  <text x="70" y="204.0" class="tick" text-anchor="end">6</text>
+  <line x1="80" y1="135.0" x2="470" y2="135.0" class="gitter"/>
+  <text x="70" y="139.0" class="tick" text-anchor="end">8</text>
+  <line x1="80" y1="70.0" x2="470" y2="70.0" class="gitter"/>
+  <text x="70" y="74.0" class="tick" text-anchor="end">10</text>
+  <line x1="80.0" y1="70" x2="80.0" y2="330" class="gitter"/>
+  <text x="80.0" y="352" class="tick" text-anchor="middle">1000</text>
+  <line x1="177.5" y1="70" x2="177.5" y2="330" class="gitter"/>
+  <text x="177.5" y="352" class="tick" text-anchor="middle">2000</text>
+  <line x1="275.0" y1="70" x2="275.0" y2="330" class="gitter"/>
+  <text x="275.0" y="352" class="tick" text-anchor="middle">3000</text>
+  <line x1="372.5" y1="70" x2="372.5" y2="330" class="gitter"/>
+  <text x="372.5" y="352" class="tick" text-anchor="middle">4000</text>
+  <line x1="470.0" y1="70" x2="470.0" y2="330" class="gitter"/>
+  <text x="470.0" y="352" class="tick" text-anchor="middle">5000</text>
+
+  <line x1="80" y1="70" x2="80" y2="330" class="achse"/>
+  <line x1="80" y1="330" x2="470" y2="330" class="achse"/>
+  <text x="470" y="370" class="tick" text-anchor="end">Jahresrueckfluss</text>
+  <text x="70" y="56" class="tick" text-anchor="end">Jahre</text>
+
+  <polyline points="80.0,70.0 82.0,76.4 83.9,82.5 85.8,88.4 87.8,94.1 89.8,99.5 91.7,104.8 93.7,109.9 95.6,114.8 97.5,119.6 99.5,124.2 101.5,128.6 103.4,132.9 105.3,137.1 107.3,141.1 109.3,145.0 111.2,148.8 113.2,152.5 115.1,156.0 117.0,159.5 119.0,162.9 120.9,166.1 122.9,169.3 124.8,172.4 126.8,175.4 128.8,178.3 130.7,181.2 132.7,184.0 134.6,186.7 136.6,189.3 138.5,191.9 140.4,194.4 142.4,196.8 144.4,199.2 146.3,201.5 148.3,203.8 150.2,206.0 152.2,208.2 154.1,210.3 156.1,212.4 158.0,214.4 159.9,216.4 161.9,218.4 163.8,220.3 165.8,222.1 167.8,223.9 169.7,225.7 171.6,227.5 173.6,229.2 175.6,230.9 177.5,232.5 179.4,234.1 181.4,235.7 183.4,237.2 185.3,238.8 187.3,240.2 189.2,241.7 191.1,243.1 193.1,244.5 195.1,245.9 197.0,247.3 198.9,248.6 200.9,249.9 202.8,251.2 204.8,252.5 206.8,253.7 208.7,254.9 210.7,256.1 212.6,257.3 214.5,258.4 216.5,259.6 218.4,260.7 220.4,261.8 222.3,262.9 224.3,264.0 226.3,265.0 228.2,266.0 230.2,267.0 232.1,268.0 234.1,269.0 236.0,270.0 238.0,271.0 239.9,271.9 241.8,272.8 243.8,273.7 245.8,274.6 247.7,275.5 249.7,276.4 251.6,277.2 253.6,278.1 255.5,278.9 257.5,279.8 259.4,280.6 261.4,281.4 263.3,282.2 265.3,282.9 267.2,283.7 269.1,284.5 271.1,285.2 273.1,285.9 275.0,286.7 276.9,287.4 278.9,288.1 280.9,288.8 282.8,289.5 284.8,290.2 286.7,290.8 288.6,291.5 290.6,292.2 292.6,292.8 294.5,293.4 296.5,294.1 298.4,294.7 300.3,295.3 302.3,295.9 304.3,296.5 306.2,297.1 308.1,297.7 310.1,298.3 312.0,298.8 314.0,299.4 315.9,300.0 317.9,300.5 319.9,301.1 321.8,301.6 323.8,302.1 325.7,302.7 327.6,303.2 329.6,303.7 331.6,304.2 333.5,304.7 335.5,305.2 337.4,305.7 339.4,306.2 341.3,306.7 343.3,307.2 345.2,307.6 347.2,308.1 349.1,308.6 351.0,309.0 353.0,309.5 354.9,309.9 356.9,310.4 358.8,310.8 360.8,311.2 362.8,311.7 364.7,312.1 366.6,312.5 368.6,312.9 370.6,313.3 372.5,313.8 374.4,314.2 376.4,314.6 378.4,315.0 380.3,315.3 382.3,315.7 384.2,316.1 386.2,316.5 388.1,316.9 390.1,317.2 392.0,317.6 394.0,318.0 395.9,318.3 397.8,318.7 399.8,319.1 401.8,319.4 403.7,319.8 405.6,320.1 407.6,320.5 409.6,320.8 411.5,321.1 413.4,321.5 415.4,321.8 417.4,322.1 419.3,322.5 421.3,322.8 423.2,323.1 425.1,323.4 427.1,323.7 429.1,324.0 431.0,324.3 432.9,324.7 434.9,325.0 436.9,325.3 438.8,325.6 440.8,325.9 442.7,326.1 444.7,326.4 446.6,326.7 448.5,327.0 450.5,327.3 452.4,327.6 454.4,327.9 456.3,328.1 458.3,328.4 460.3,328.7 462.2,328.9 464.1,329.2 466.1,329.5 468.1,329.7 470.0,330.0" class="kurve"/>
+
+  <circle cx="226.3" cy="265.0" r="4.5" class="marke"/><text x="235.3" y="257.0" class="markentext">2500 → 4</text>
+  <circle cx="275.0" cy="286.7" r="4.5" class="marke"/><text x="284.0" y="278.7" class="markentext">3000 → 3.333333</text>
+
+  <text x="500" y="74" class="kopf">Einzelne Faelle, frisch gerechnet</text>
+  <text x="500" y="104" class="zelle">amortisationsdauer(10000, 2500)</text><text x="790" y="104" class="wert" text-anchor="end">4</text>
+  <text x="500" y="130" class="zelle">amortisationsdauer(10000, 3000)</text><text x="790" y="130" class="wert" text-anchor="end">3.333333</text>
+  <text x="500" y="156" class="zelle">amortisationsdauer(10000, 0)</text><text x="790" y="156" class="wert" text-anchor="end">Infinity</text>
+
+  <text x="40" y="434" class="unter">Jede Zahl im Bild stammt aus tests/belegbild-beispiel.mjs#amortisationsdauer -- ein zweiter Rechenweg steht nirgends.</text>
+  <text x="40" y="452" class="fuss">Erzeugt am 2026-09-20T17:52:07.358Z von tools/belegbild.mjs</text>
+</svg>

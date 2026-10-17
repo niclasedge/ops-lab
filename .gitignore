@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+*.log
+
+# ops.py laesst sich importieren; `tests/lagebild-belege.test.mjs` nutzt das, um die
+# Aufloesungsregel der Belegroute ohne Server zu pruefen. Dabei faellt Bytecode an.
+__pycache__/
+
+# Arbeitsraeume der Changes. Jeder ist ein eigener git-Arbeitsbaum mit eigenem
+# Branch -- versioniert wird dort, nicht hier.
+.claude/worktrees/
+
+# Local artifacts and third-party reference material (not versioned)
+reference/software-factory-ideen/
+.claude/settings.local.json
+.env
+.env.*

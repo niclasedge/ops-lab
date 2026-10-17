@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="456" viewBox="0 0 1000 456">
+<rect width="1000" height="456" fill="#fbfbfa"/>
+<rect x="0" y="0" width="1000" height="6" fill="#2f6f4f"/>
+<text x="24" y="34" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15" font-weight="bold" fill="#2f6f4f" xml:space="preserve">Change-Karte karte-kompakt — vier Klappen, alle zugeklappt</text>
+<text x="24" y="54" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="normal" fill="#666" xml:space="preserve">0/5 Aufgaben · frei · Gates: gate1, gate2 · Arbeitsbaum karte-kompakt</text>
+<text x="24" y="74" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="normal" fill="#666" xml:space="preserve">erzeugt aus changeKarte() in ops.py · 5798 Zeichen HTML · 0 von 4 Klappen mit open</text>
+<text x="24" y="106" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="bold" fill="#1b1b1b" xml:space="preserve">▸ Worum es geht</text>
+<rect x="24" y="114" width="952" height="58" fill="#ffffff" stroke="#d8d8d4"/>
+<text x="40" y="134" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#2f6f4f" xml:space="preserve">Attribut open: nicht gesetzt   ·   data-id ch:karte-kompakt:worum</text>
+<text x="40" y="152" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#1b1b1b" xml:space="preserve">Inhalt ausgeliefert: 2386 Zeichen, ein Textblock</text>
+<text x="24" y="184" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="bold" fill="#1b1b1b" xml:space="preserve">▸ 3 Anforderungen</text>
+<rect x="24" y="192" width="952" height="58" fill="#ffffff" stroke="#d8d8d4"/>
+<text x="40" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#2f6f4f" xml:space="preserve">Attribut open: nicht gesetzt   ·   data-id ch:karte-kompakt:anforderungen</text>
+<text x="40" y="230" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#1b1b1b" xml:space="preserve">Inhalt ausgeliefert: 456 Zeichen, 3 Eintrag/Eintraege</text>
+<text x="24" y="262" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="bold" fill="#1b1b1b" xml:space="preserve">▸ Dateien: 3 gedeckt · 0 ohne Zusage · 0 ohne Änderung</text>
+<rect x="24" y="270" width="952" height="58" fill="#ffffff" stroke="#d8d8d4"/>
+<text x="40" y="290" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#2f6f4f" xml:space="preserve">Attribut open: nicht gesetzt   ·   data-id ch:karte-kompakt:dateien</text>
+<text x="40" y="308" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#1b1b1b" xml:space="preserve">Inhalt ausgeliefert: 237 Zeichen, 3 Eintrag/Eintraege</text>
+<text x="24" y="340" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="bold" fill="#1b1b1b" xml:space="preserve">▸ 0 von 5 Aufgaben</text>
+<rect x="24" y="348" width="952" height="58" fill="#ffffff" stroke="#d8d8d4"/>
+<text x="40" y="368" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#2f6f4f" xml:space="preserve">Attribut open: nicht gesetzt   ·   data-id ch:karte-kompakt:aufgaben</text>
+<text x="40" y="386" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="normal" fill="#1b1b1b" xml:space="preserve">Inhalt ausgeliefert: 1404 Zeichen, 5 Eintrag/Eintraege</text>
+<text x="24" y="432" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="bold" fill="#2f6f4f" xml:space="preserve">Die Karte liefert beim ersten Zeichnen keine Klappe mit open aus — den Inhalt aller vier trotzdem.</text>
+</svg>

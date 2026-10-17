@@ -1,0 +1,54 @@
+{
+  "kennung": "amortisation",
+  "adapter": "claude",
+  "zeitpunkt": "2026-09-20T19:09:49.728Z",
+  "sitzung": "89401f6c-2af6-4550-a77d-46f3a750bc75",
+  "ziel": {
+    "repo": "/Users/alice/GITHUB/ops-lab-test",
+    "basis": "main",
+    "stand": "b73833a785879d998fd0ffbc01e5306448629768"
+  },
+  "werkzeugstand": "e06f8e8090ac451c90abfc25fdf696606785d447",
+  "token": {
+    "ein": 68,
+    "aus": 23430,
+    "cacheLesen": 2487246,
+    "cacheSchreiben": 80094
+  },
+  "gesamt": 2590838,
+  "nachrichten": 34,
+  "dauer": {
+    "spanne": 302.426,
+    "aktiv": 302.42600000000004
+  },
+  "startkontext": 33671,
+  "befehle": 46,
+  "schalenbefehle": 27,
+  "kosten": {
+    "euro": 6.4316,
+    "vollstaendig": true,
+    "unbekannt": []
+  },
+  "erfuellung": {
+    "erfuellt": [
+      "gates",
+      "beleg",
+      "aufgaben",
+      "dateien",
+      "tests",
+      "pr",
+      "merge"
+    ],
+    "offen": [],
+    "stand": "7/7"
+  },
+  "erfuellt": [
+    "gates",
+    "beleg",
+    "aufgaben",
+    "dateien",
+    "tests",
+    "pr",
+    "merge"
+  ]
+}

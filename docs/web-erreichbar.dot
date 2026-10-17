@@ -1,0 +1,46 @@
+// Belegbild zum Change web-erreichbar.
+//
+// Jede Zahl und jede Zeichenkette hier stammt aus einem echten Aufruf am laufenden
+// Stand vom 2026-09-21, nicht aus der Beschreibung: die drei Portproben aus
+// ops.port_belegt(), die beiden Startzeilen aus ops.web_meldung(), die Bindung aus
+// `ss -ltn`. Erzeugt wird daraus das SVG danebe: dot -Tsvg docs/web-erreichbar.dot
+digraph web_erreichbar {
+  rankdir=LR;
+  fontname="sans-serif";
+  node [shape=box, style="rounded,filled", fontname="sans-serif", fontsize=10];
+  edge [fontname="sans-serif", fontsize=9];
+
+  aufruf [label="ops --web\n--web-host 0.0.0.0\n--web-port 8790", fillcolor="#e8eef7"];
+
+  probe [label="port_belegt(host, port)\nvor dem Import von FastAPI", fillcolor="#f2f2f2"];
+
+  subgraph cluster_messung {
+    label="gemessen 2026-09-21";
+    color="#bbbbbb";
+    fontsize=10;
+    m1 [label="127.0.0.1:8765  ->  True\n(git-planner-go / report-tool)", fillcolor="#fde7e7"];
+    m2 [label="0.0.0.0:8790  ->  True\n(diese Ansicht, laeuft)", fillcolor="#fde7e7"];
+    m3 [label="127.0.0.1:8791  ->  False\n(frei)", fillcolor="#e6f4ea"];
+  }
+
+  belegt [label="Exit 4\n\"Port 8765 ist auf 127.0.0.1 bereits belegt.\nEin anderer Port: --web-port <nummer>.\"", fillcolor="#fde7e7"];
+  frei   [label="Start\nuvicorn.run(host=host, port=port)", fillcolor="#e6f4ea"];
+
+  lokal [label="web_meldung(\"127.0.0.1\", 8765)\n= \"Lagebild: http://127.0.0.1:8765\"\nkein Netz-Hinweis", fillcolor="#e6f4ea"];
+  offen [label="web_meldung(\"0.0.0.0\", 8790)\n= \"Lagebild: Port 8790 auf allen Adressen\n— im lokalen Netz erreichbar\"", fillcolor="#fff4e0"];
+
+  bindung [label="ss -ltn\nLISTEN 0.0.0.0:8790\n(erreichbar vom Host der VM)", fillcolor="#e6f4ea"];
+
+  tests [label="node --test tests/lagebild-web.test.mjs\n47 Tests, 0 Fehler\nops.py --selftest: Parser-Tests bestanden", shape=note, fillcolor="#f7f7f2"];
+
+  aufruf -> probe;
+  probe -> m1 [label="Vorgabe 8765"];
+  probe -> m2;
+  probe -> m3;
+  m1 -> belegt [label="belegt"];
+  m3 -> frei [label="frei"];
+  frei -> lokal [label="Vorgabe 127.0.0.1"];
+  frei -> offen [label="--web-host 0.0.0.0"];
+  offen -> bindung;
+  bindung -> tests [style=dashed, arrowhead=none];
+}

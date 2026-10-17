@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <rect width="1000" height="520" fill="#12141a"/>
+
+  <text x="28" y="40" fill="#e6e8ee" font-size="19" font-weight="600">Gegenprobe — `just neu` auf eine Kennung, die es schon gibt</text>
+  <text x="28" y="64" fill="#8b93a7" font-size="13">Change `artefakte-schuetzen` · Kennung `messlauf`, deren Artefakte auf `main` liegen</text>
+
+  <!-- vorher -->
+  <rect x="28" y="88" width="452" height="404" rx="6" fill="#1b1215" stroke="#7a2d36"/>
+  <text x="44" y="114" fill="#ff8a94" font-size="14" font-weight="600">vorher — Bestand 5090dc4</text>
+
+  <text x="44" y="146" fill="#6f7789" font-size="12.5">$ just neu messlauf messung</text>
+  <text x="44" y="170" fill="#c9cede" font-size="12.5">Change angelegt. Gearbeitet wird ab jetzt hier:</text>
+  <text x="44" y="190" fill="#c9cede" font-size="12.5">  .claude/worktrees/messlauf</text>
+  <text x="44" y="210" fill="#c9cede" font-size="12.5">  openspec/changes/messlauf/proposal.md</text>
+  <text x="44" y="234" fill="#6f7789" font-size="12.5">Exit-Code: 0</text>
+
+  <text x="44" y="272" fill="#6f7789" font-size="12.5">$ head -3 …/messlauf/proposal.md</text>
+  <text x="44" y="296" fill="#ff8a94" font-size="12.5"># messlauf</text>
+  <text x="44" y="316" fill="#ff8a94" font-size="12.5">## Warum</text>
+  <text x="44" y="336" fill="#ff8a94" font-size="12.5">&lt;!-- Fuenf bis zehn Saetze: welcher Bedarf…</text>
+
+  <text x="44" y="382" fill="#ff5c6c" font-size="13.5" font-weight="600">Die Vorlage steht dort, wo der Vorschlag stand.</text>
+  <text x="44" y="404" fill="#c9cede" font-size="12.5">Sechs Requirements, das Kostenmodell und die</text>
+  <text x="44" y="424" fill="#c9cede" font-size="12.5">fuenf Entscheidungen: kommentarlos ersetzt.</text>
+  <text x="44" y="456" fill="#8b93a7" font-size="12">`git status` zeigt nur "geaendert" — wie nach</text>
+  <text x="44" y="474" fill="#8b93a7" font-size="12">jedem Anlegen. Der Verlust faellt nicht auf.</text>
+
+  <!-- nachher -->
+  <rect x="520" y="88" width="452" height="404" rx="6" fill="#101a14" stroke="#2d6b45"/>
+  <text x="536" y="114" fill="#79dfa1" font-size="14" font-weight="600">nachher — mit der Pruefung</text>
+
+  <text x="536" y="146" fill="#6f7789" font-size="12.5">$ just neu messlauf messung</text>
+  <text x="536" y="170" fill="#c9cede" font-size="12.5">Change 'messlauf' gibt es schon:</text>
+  <text x="536" y="190" fill="#c9cede" font-size="12.5">openspec/changes/messlauf</text>
+  <text x="536" y="214" fill="#c9cede" font-size="12.5">Seine Artefakte liegen im Branch, von dem</text>
+  <text x="536" y="234" fill="#c9cede" font-size="12.5">abgezweigt wuerde -- die Vorlagen wuerden</text>
+  <text x="536" y="254" fill="#c9cede" font-size="12.5">sie ueberschreiben. Es wurde nichts angelegt.</text>
+  <text x="536" y="278" fill="#6f7789" font-size="12.5">Exit-Code: 2</text>
+
+  <text x="536" y="316" fill="#6f7789" font-size="12.5">$ git status --porcelain</text>
+  <text x="536" y="336" fill="#6f7789" font-size="12.5">$ git branch --list change/messlauf</text>
+  <text x="536" y="356" fill="#79dfa1" font-size="12.5">(leer — kein Arbeitsraum, kein Branch)</text>
+
+  <text x="536" y="394" fill="#4ade80" font-size="13.5" font-weight="600">Gefragt wird vor dem Anlegen.</text>
+  <text x="536" y="416" fill="#c9cede" font-size="12.5">`git ls-tree HEAD` kennt den Ordner bereits.</text>
+  <text x="536" y="436" fill="#c9cede" font-size="12.5">Kein Rueckbau noetig, kein halber Zustand.</text>
+  <text x="536" y="468" fill="#8b93a7" font-size="12">3 Regressionstests in tests/neu.test.mjs.</text>
+
+  <text x="28" y="508" fill="#6f7789" font-size="12">Nachweis: 61 Tests gruen · lint sauber · openspec validate --strict 4/4 · Gate 1 8/8 · Gate 2 4/4</text>
+</svg>

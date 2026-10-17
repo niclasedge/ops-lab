@@ -1,0 +1,17 @@
+{
+  "kennung": "amortisation",
+  "ziel": "/Users/alice/GITHUB/ops-lab-test",
+  "pruefwert": "f9a4283f183d",
+  "modell": null,
+  "sitzung": "70839ac5-9b66-49f9-ae00-1540b9dd0cf0",
+  "werkzeugfassung": "ad52b68",
+  "standVorher": "ea0934e",
+  "beginn": "2026-09-20T17:13:44.184Z",
+  "sekunden": 113,
+  "code": 0,
+  "ergebnis": {
+    "subtype": "success",
+    "zuege": 26,
+    "kosten": 1.3442610000000002
+  }
+}

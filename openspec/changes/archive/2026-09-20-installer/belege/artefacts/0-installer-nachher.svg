@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="331" viewBox="0 0 980 331">
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .t { font-size: 20px; font-weight: 600; fill: #111; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .s { font-size: 13px; fill: #555; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .h { font-size: 14px; font-weight: 600; fill: #111; }
+  .u { font-size: 11px; fill: #777; }
+  .d { font-size: 12.5px; }
+  .g { font-size: 12.5px; opacity: 0.75; }
+  .f { font-size: 11.5px; fill: #666; font-family: ui-sans-serif, system-ui, sans-serif; }
+</style>
+<rect width="100%" height="100%" fill="#fbfbfa"/>
+<text x="32" y="38" class="t">installer — Stufe 1 und Stufe 2 nach zwei Laeufen</text>
+<text x="32" y="60" class="s">Derselbe Befehl zweimal hintereinander. Der zweite Lauf stellt denselben Zustand her wie der erste.</text>
+<line x1="32" y1="76" x2="948" y2="76" stroke="#ddd"/>
+<line x1="490" y1="90" x2="490" y2="279" stroke="#eee"/>
+<text x="32" y="90" class="h">Stufe 1 — Konfigurationsordner</text>
+<text x="32" y="110" class="u">CLAUDE_CONFIG_DIR, hier ein Wegwerfordner</text>
+<text x="32" y="128" class="d" fill="#1c5d99">agents/change-arbeiter.md</text>
+<text x="32" y="147" class="d" fill="#1c5d99">ops-lab/.claude/agents/change-arbeiter.md</text>
+<text x="32" y="166" class="d" fill="#1c5d99">ops-lab/.claude/skills/leitstand/SKILL.md</text>
+<text x="32" y="185" class="d" fill="#1c5d99">ops-lab/ops.py</text>
+<text x="32" y="204" class="g" fill="#1c5d99">ops-lab/tests/  —  14 Dateien</text>
+<text x="32" y="223" class="g" fill="#1c5d99">ops-lab/tools/  —  13 Dateien</text>
+<text x="32" y="242" class="d" fill="#1c5d99">skills/leitstand/SKILL.md</text>
+<text x="514" y="90" class="h">Stufe 2 — Zielprojekt</text>
+<text x="514" y="110" class="u">Argument, Vorgabe: Arbeitsverzeichnis</text>
+<text x="514" y="128" class="d" fill="#2a7d4f">justfile</text>
+<text x="514" y="147" class="d" fill="#2a7d4f">ops.py</text>
+<text x="514" y="166" class="d" fill="#2a7d4f">openspec/changes/.gitkeep</text>
+<text x="514" y="185" class="d" fill="#2a7d4f">openspec/config.yaml</text>
+<text x="514" y="204" class="d" fill="#2a7d4f">openspec/specs/.gitkeep</text>
+<text x="514" y="223" class="g" fill="#2a7d4f">tests/  —  14 Dateien</text>
+<text x="514" y="242" class="g" fill="#2a7d4f">tools/  —  12 Dateien</text>
+<line x1="32" y1="287" x2="948" y2="287" stroke="#ddd"/>
+<text x="32" y="307" class="f">Die CLAUDE.md fehlt auf beiden Seiten: der Installer schreibt sie nicht, er gibt den Uebergabetext nach stdout aus.</text>
+</svg>

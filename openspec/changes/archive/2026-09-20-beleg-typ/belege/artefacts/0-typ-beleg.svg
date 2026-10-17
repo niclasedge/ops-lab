@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="299" viewBox="0 0 900 299">
+<rect width="900" height="299" fill="#fbfbfa"/>
+<rect x="0" y="0" width="900" height="6" fill="#2f6f4f"/>
+<text x="24" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="bold" fill="#2f6f4f" xml:space="preserve">Inhaltstyp der Belegroute -- Stufe nachher, Change beleg-typ</text>
+<text x="24" y="65" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve"></text>
+<text x="24" y="86" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve">Belegroute an http://127.0.0.1:8791 -- 9 Belege, 3 Endungen</text>
+<text x="24" y="107" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve"></text>
+<text x="24" y="128" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve">Endung     Status ausgeliefert                 mimetypes allein       Bytes</text>
+<text x="24" y="149" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve">----------------------------------------------------------------------------------------</text>
+<text x="24" y="170" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#8a4b00" xml:space="preserve">.dot       200    text/plain; charset=utf-8    application/msword        3509</text>
+<text x="24" y="191" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve">.png       200    image/png                    image/png               211103</text>
+<text x="24" y="212" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve">.svg       200    image/svg+xml                image/svg+xml           567447</text>
+<text x="24" y="233" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#1b1b1b" xml:space="preserve"></text>
+<text x="24" y="254" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="normal" fill="#8a4b00" xml:space="preserve">Erwartung: .dot als Text statt application/msword; Bilder behalten ihren Typ.</text>
+</svg>

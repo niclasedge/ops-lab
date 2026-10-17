@@ -1,0 +1,56 @@
+{
+  "kennung": "amortisation",
+  "adapter": "claude",
+  "zeitpunkt": "2026-09-20T19:25:44.811Z",
+  "sitzung": "a165f80e-06ef-4f97-a935-ff3ca16c5d0e",
+  "ziel": {
+    "repo": "/Users/alice/GITHUB/ops-lab-test",
+    "basis": "main",
+    "stand": "06788873ee6d2a9673bc78974c53ba6c0ff81b28"
+  },
+  "werkzeugstand": "e6cf5454243ce46c57a10b8ec4d08ac461c133c0",
+  "token": {
+    "ein": 546,
+    "aus": 8589,
+    "cacheLesen": 831527,
+    "cacheSchreiben": 56591
+  },
+  "gesamt": 897253,
+  "nachrichten": 18,
+  "dauer": {
+    "spanne": 167.504,
+    "aktiv": 167.50400000000008
+  },
+  "startkontext": 35753,
+  "befehle": 24,
+  "schalenbefehle": 12,
+  "kosten": {
+    "euro": 0,
+    "vollstaendig": false,
+    "unbekannt": [
+      "claude-fable-5-1"
+    ]
+  },
+  "erfuellung": {
+    "erfuellt": [
+      "gates",
+      "beleg",
+      "aufgaben",
+      "dateien",
+      "tests",
+      "pr",
+      "merge"
+    ],
+    "offen": [],
+    "stand": "7/7"
+  },
+  "erfuellt": [
+    "gates",
+    "beleg",
+    "aufgaben",
+    "dateien",
+    "tests",
+    "pr",
+    "merge"
+  ]
+}

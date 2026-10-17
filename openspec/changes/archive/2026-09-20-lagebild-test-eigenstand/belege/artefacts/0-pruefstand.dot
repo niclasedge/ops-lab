@@ -1,0 +1,65 @@
+// Der Pruefstand, den tests/lagebild-web.test.mjs sich vor jedem Lauf selbst herstellt.
+//
+// Links das hergestellte Repo, rechts die Nutzlast, die ops.py daraus bildet. Rot ist
+// die fruehere Fassung: sie las das laufende Repo und fand ihren Arbeitsbaum nicht mehr,
+// sobald der zugehoerige Change gemergt und archiviert war.
+//
+// Anzeigen:  dot -Tpng docs/pruefstand.dot -o pruefstand.png
+
+digraph pruefstand {
+  rankdir=LR;
+  fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fillcolor="#f5f5f5", fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9, color="#555555"];
+
+  subgraph cluster_repo {
+    label="hergestelltes Repo  (mkdtemp, git init, main)";
+    style=filled; fillcolor="#fbfbfb"; color="#bbbbbb"; fontsize=11;
+
+    subgraph cluster_haupt {
+      label="Hauptbaum";
+      style=filled; fillcolor="#eef4fb"; color="#9db8d6";
+
+      h_commit [label="Commit\n„Pruefstand angelegt\"", fillcolor="#dce8f6"];
+      h_wandel [label="probe-wandel\n1 von 3 Aufgaben\ngate1.md"];
+      h_ruhend [label="probe-ruhend\n1 von 3 Aufgaben"];
+    }
+
+    subgraph cluster_baum {
+      label="Arbeitsbaum  .claude/worktrees/probe-wandel";
+      style=filled; fillcolor="#eef7ee"; color="#9dc99d";
+
+      a_commit [label="Commit\n„probe-wandel:\nPruefstand beschrieben\"", fillcolor="#d9edd9"];
+      a_wandel [label="probe-wandel\n2 von 3 Aufgaben"];
+      a_schmutz [label="schmutziger Stand\nREADME.md  geaendert\nmerkzettel.md  vorgemerkt\nnotizen.txt  unverfolgt\naltlast.md  geloescht", shape=note, fillcolor="#fffbe6"];
+    }
+  }
+
+  subgraph cluster_nutzlast {
+    label="ops.py --root PFAD --web --trocken";
+    style=filled; fillcolor="#fbfbfb"; color="#bbbbbb"; fontsize=11;
+
+    n_wandel [label="changes[probe-wandel]\nworktree = probe-wandel\nweicht_ab = true", fillcolor="#d9edd9"];
+    n_ruhend [label="changes[probe-ruhend]\nworktree = Hauptbaum\nweicht_ab = false", fillcolor="#dce8f6"];
+    n_zeit [label="zeitleiste\n1 Fertigstellung", fillcolor="#f0f0f0"];
+    n_dateien [label="worktrees[].dateien\nalle vier Arten", fillcolor="#fffbe6"];
+  }
+
+  h_commit -> h_wandel [style=dotted, arrowhead=none];
+  h_commit -> h_ruhend [style=dotted, arrowhead=none];
+  h_commit -> a_commit [label="git worktree add\n-b change/probe-wandel"];
+  a_commit -> a_wandel [style=dotted, arrowhead=none];
+  a_commit -> a_schmutz [style=dotted, arrowhead=none];
+
+  a_wandel -> n_wandel [label="weitergeschrieben"];
+  h_ruhend -> n_ruhend [label="unangetastet"];
+  a_commit -> n_zeit [label="abgehakt und committet"];
+  a_schmutz -> n_dateien;
+
+  // Die fruehere Fassung, zum Vergleich.
+  frueher [label="ops.py --web --trocken\n--worktree lagebild-web\n(laufendes Repo)", fillcolor="#fdeaea", color="#cc4444", fontcolor="#aa2222"];
+  leer [label="worktrees = []\n16 Pruefungen rot", fillcolor="#fdeaea", color="#cc4444", fontcolor="#aa2222"];
+  frueher -> leer [label="Change gemergt\nund archiviert", color="#cc4444", fontcolor="#aa2222"];
+
+  { rank=same; frueher; h_commit; }
+}

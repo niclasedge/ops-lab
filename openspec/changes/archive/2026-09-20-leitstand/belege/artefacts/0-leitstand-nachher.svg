@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="#1d1f21"/>
+  <g font-family="Menlo, monospace" font-size="14">
+    <text x="24" y="38" fill="#7f8c8d">ops-lab — Nachweis nachher — Change `leitstand`</text>
+
+    <text x="24" y="76" fill="#5fb3b3">$ node --test tests/leitstand.test.mjs</text>
+    <text x="24" y="98" fill="#e8e6e3">✔ Ein Arbeiter, ein Change, ein Arbeitsraum</text>
+    <text x="24" y="118" fill="#e8e6e3">✔ Der Arbeiter startet keine weiteren Arbeiter</text>
+    <text x="24" y="138" fill="#e8e6e3">✔ Die Kette wird in fester Reihenfolge durchlaufen</text>
+    <text x="24" y="158" fill="#e8e6e3">✔ Merge nur bei vollstaendigem Nachweis</text>
+    <text x="24" y="178" fill="#e8e6e3">✔ Der Arbeiter mergt nicht</text>
+    <text x="24" y="200" fill="#8ec07c">tests 16 · pass 16 · fail 0</text>
+
+    <text x="24" y="240" fill="#5fb3b3">$ just alles</text>
+    <text x="24" y="262" fill="#8ec07c">lint ok · tests 187 pass 187 fail 0 · validate 5 passed 0 failed</text>
+
+    <text x="24" y="302" fill="#5fb3b3">schrittfolge(change-arbeiter.md)</text>
+    <text x="24" y="324" fill="#e8e6e3">[ "neu", "gate1", "gate2", "beleg", "fertig", "pr" ]</text>
+    <text x="24" y="346" fill="#f0c674">kein "merge" — der Arbeiter endet beim Pull Request</text>
+
+    <text x="24" y="386" fill="#5fb3b3">werkzeugsatz(change-arbeiter.md)</text>
+    <text x="24" y="408" fill="#e8e6e3">[ "Bash", "Read", "Write", "Edit", "Glob", "Grep" ]</text>
+    <text x="24" y="430" fill="#f0c674">kein "Agent" — keine Enkel</text>
+
+    <text x="24" y="470" fill="#7f8c8d">mergeErlaubt: drei Nachweise + gruen → erlaubt; sonst Rueckfrage mit Grund.</text>
+  </g>
+</svg>
